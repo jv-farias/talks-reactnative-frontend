@@ -3,46 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function CardTopicos({ title, hour }) {
 
-    const topicsCards = [
-        {
-            title: "ABERTURA",
-            hour: "09:00",
-        },
-        {
-            title: "NETWORKING",
-            hour: "10:00",
-        },
-        {
-            title: "INTERVALO ALMOÇO",
-            hour: "12:00",
-        },
-        {
-            title: "COFFEE BREAK + NETWORKING",
-            hour: "16:20",
-        },
-        {
-            title: "SORTEIOS DE BRINDES E PARTICIPANTES DO CODANDO NO BREU",
-            hour: "17:00",
-        },
-        {
-            title: "ENCERRAMENTOS DAS PALESTRAS",
-            hour: "18:00",
-        },
-        {
-            title: "CODANDO NO BREU | CODE IN THE DARK",
-            hour: "18:30",
-        }
-    ];
-
-
     return (
         <View style={styles.containerCard}>
-            {topicsCards.map((topic) =>
-                <View style={styles.cardTopicos} >
-                    <Text style={styles.time}>{hour = topic.hour}</Text>
-                    <Text style={styles.text}>{title = topic.title}</Text>
-                </View>
-            )}
+            <View style={styles.cardTopicos} >
+                <Text style={styles.time}>{hour}</Text>
+                <Text style={styles.text}>{title}</Text>
+            </View>
         </View>
     )
 }
