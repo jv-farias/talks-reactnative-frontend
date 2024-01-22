@@ -1,8 +1,20 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Image, Pressable, Linking } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
-import { Foundation } from '@expo/vector-icons';
+
+
+/**
+ * @typedef {Object} CardPalestranteProps
+ * @property {string} CardPalestranteProps.assunto - título da palestra
+ * @property {string} CardPalestranteProps.nome - nome do palestrante
+ * @property {string} CardPalestranteProps.cargo - cargo do palestrante
+ * @property {string} CardPalestranteProps.trilha - trilha da palestra, podendo ser: `principal`, `communities`, `frontend` ou `invite`	
+ * @property {string} CardPalestranteProps.linkImg - link da imagem do palestrante
+ * @property {string} CardPalestranteProps.horario - horario da palestra no formato `HH:MM` 
+ * @property {string} CardPalestranteProps.socialLink - link da rede social do palestrante 
+ * @param {CardPalestranteProps} props
+ */
 
 export default function CardPalestrante({ assunto, nome, cargo, trilha, linkImg, horario, socialLink }) {
 
@@ -10,7 +22,7 @@ export default function CardPalestrante({ assunto, nome, cargo, trilha, linkImg,
 
     const getSocialLinks = (url) => {
         let linkName = 'LinkedIn';
-        let iconComponent = 'linkedin-square'
+        let iconComponent = 'linkedin'
         switch (true) {
             case url.includes('instagram.com'):
                 linkName = 'Instagram'
@@ -76,7 +88,7 @@ export default function CardPalestrante({ assunto, nome, cargo, trilha, linkImg,
                         </View>
                         <View
                             style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 5 }}>
-                            <AntDesign onPress={() => {
+                            <MaterialCommunityIcons onPress={() => {
                                 Linking.openURL(socialLink);
                             }} name={iconComponent} size={16} color="white" />
                             <Text
